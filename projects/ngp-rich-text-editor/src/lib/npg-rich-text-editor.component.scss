@@ -1,0 +1,94 @@
+.editable {
+  width: 328px;
+  min-height: 83px;
+  margin-top: 2px;
+  border: 1px solid #ccc;
+}
+
+
+.editable .span-0 {
+  /* Added to reset styles correctly */
+  font-weight: normal;
+  /* Reset b */
+  text-decoration: none;
+  /* Reset u */
+  font-style: normal;
+  /* Reset i */
+  vertical-align: unset;
+}
+
+
+.editable .span-b {
+  font-weight: bold;
+}
+
+
+.editable .span-u {
+  text-decoration: underline;
+}
+
+
+.editable .span-i {
+  font-style: italic;
+}
+
+
+.editable .span-sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.editable .span-sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+
+.icon-cls {
+  border: 1px solid;
+  font-weight: bold;
+  color: #3f51b5 !important;
+}
+
+
+.cntrl-mb {
+  margin-bottom: 20px;
+}
+
+
+.small-icon-button {
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+
+  .mat-icon {
+    width: 16px !important;
+    height: 16px !important;
+    line-height: 16px !important;
+  }
+
+  .material-icons {
+    font-size: 16px !important;
+  }
+}
+
+
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button {
+  min-width: 42px;
+}
+
+
+.clear-btn {
+  font-size: 12px;
+}
+
+
+.mat-error {
+  color: rgb(var(--error-color));
+  font-family: 'Montserrat-Regular';
+  font-size: 10px;
+  padding-top: 5px;
+}
