@@ -1,6 +1,6 @@
 {
   "name": "ngp-captcha",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0"

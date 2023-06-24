@@ -7,7 +7,7 @@ export class NgpCaptchaService {
 
   constructor() { }
 
-  generateCaptcha(): string {
+  generateCaptcha(randomCaptchaSize: number): string {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let captcha = '';
 
@@ -21,7 +21,7 @@ export class NgpCaptchaService {
     captcha += characters.charAt(Math.floor(Math.random() * 10) + 52);
 
     // Add remaining random characters
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < (randomCaptchaSize - 3); i++) {
       captcha += characters.charAt(Math.floor(Math.random() * characters.length));
     }
 

@@ -11,7 +11,7 @@ import {
 import { NgpCaptchaService } from './ngp-captcha.service';
 
 @Component({
-  selector: 'lib-ngp-captcha',
+  selector: 'ngp-captcha',
   template: `
     <canvas
       #canvasEl
@@ -29,18 +29,16 @@ import { NgpCaptchaService } from './ngp-captcha.service';
             [width]="imageWidth"
             [height]="imageHeight"
           />
-          <span matSuffix class="icon-refresh" (click)="renewCaptcha()"></span>
+          <button class="icon-refresh" (click)="renewCaptcha()">⟳</button>
         </div>
       </div>
       <div class="row mt-5">
         <div class="col-md-12">
           <input
-              matInput
               placeholder="Enter captcha as shown above"
               [(ngModel)]="enteredCaptchaText" (ngModelChange)="compareCaptchaText()"
-              class="w-100"
-              maxlength="6"
-            />
+              class="w-100 input-box"
+              [maxlength]="randomCaptchaSize"/>
         </div>
       </div>
     </div>
@@ -53,6 +51,7 @@ export class NgpCaptchaComponent implements AfterViewInit {
   private context!: CanvasRenderingContext2D | null;
   @Input('Text') captchaText = '';
   @Input('DataSource') DataSource: any[] = [];
+  @Input() randomCaptchaSize: number = 6;
   @Input('ImageHeight') imageHeight: string = '50';
   @Input('ImageWidth') imageWidth: string = '150';
   @Input('ShowCaptcha') ShowCaptcha: boolean = false;
@@ -65,7 +64,7 @@ export class NgpCaptchaComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit() {
-    this.captchaText = this.npgCaptchaService.generateCaptcha();
+    this.captchaText = this.npgCaptchaService.generateCaptcha(this.randomCaptchaSize);
     this.onSignatureSelection('25px');
     this.cdRef.detectChanges();
   }
@@ -122,7 +121,7 @@ export class NgpCaptchaComponent implements AfterViewInit {
   }
 
   renewCaptcha() {
-    this.captchaText = this.npgCaptchaService.generateCaptcha();
+    this.captchaText = this.npgCaptchaService.generateCaptcha(this.randomCaptchaSize);
     this.onSignatureSelection('25px');
     this.enteredCaptchaText = '';
     this.cdRef.detectChanges();
