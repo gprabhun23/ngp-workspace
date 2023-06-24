@@ -43,14 +43,6 @@
   font-size: smaller;
 }
 
-
-.icon-cls {
-  border: 1px solid;
-  font-weight: bold;
-  color: #3f51b5 !important;
-}
-
-
 .cntrl-mb {
   margin-bottom: 20px;
 }
@@ -91,4 +83,13 @@
   font-family: 'Montserrat-Regular';
   font-size: 10px;
   padding-top: 5px;
+}
+
+.icon-cls {
+  border: 1px solid #e3e3e3;
+  margin: 5px;
+  font-weight: 700;
+  color: #222222!important;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

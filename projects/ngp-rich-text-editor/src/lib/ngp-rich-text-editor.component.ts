@@ -21,31 +21,31 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   <div>
 
     <button (click)="onChangeStyle('span-i')" style="font-style: italic;" class="icon-cls small-icon-button mr-2"
-      mat-button matTooltip="Italic" [disabled]="!iscontenteditable" *ngIf="isItalicRequired" tabindex="-1">
+      [disabled]="!iscontenteditable" *ngIf="isItalicRequired" tabindex="-1">
       I
     </button>
 
-    <button (click)="onChangeStyle('span-sup')" mat-button class="icon-cls small-icon-button mr-2"
-      matTooltip="Superscript" [disabled]="!iscontenteditable" *ngIf="isSuperScriptRequired" tabindex="-1">
+    <button (click)="onChangeStyle('span-sup')" class="icon-cls small-icon-button mr-2"
+      [disabled]="!iscontenteditable" *ngIf="isSuperScriptRequired" tabindex="-1">
       x²
     </button>
 
-    <button (click)="onChangeStyle('span-sub')" mat-button class="icon-cls small-icon-button mr-2"
-      matTooltip="Subscript" [disabled]="!iscontenteditable" *ngIf="isSubScriptRequired" tabindex="-1">
+    <button (click)="onChangeStyle('span-sub')" class="icon-cls small-icon-button mr-2"
+      [disabled]="!iscontenteditable" *ngIf="isSubScriptRequired" tabindex="-1">
       x₂
     </button>
 
-    <button (click)="onChangeStyle('span-0')" mat-button class="icon-cls small-icon-button mr-2"
-      matTooltip="Clear Format" [disabled]="!iscontenteditable">
-      <span class="icon-eraser" style="font-size: 14px;" tabindex="-1"></span>
+    <button (click)="onChangeStyle('span-0')" class="icon-cls small-icon-button mr-2"
+      [disabled]="!iscontenteditable">
+      ⌫
     </button>
 
-    <button (click)="onChangeStyle('span-r')" mat-button class="icon-cls small-icon-button mr-2" matTooltip="®"
+    <button (click)="onChangeStyle('span-r')" class="icon-cls small-icon-button mr-2"
       [disabled]="!iscontenteditable" *ngIf="isRegisteredRequired" tabindex="-1">
       ®
     </button>
 
-    <button (click)="onChangeStyle('span-tm')" mat-button class="icon-cls small-icon-button mr-2" matTooltip="™"
+    <button (click)="onChangeStyle('span-tm')" class="icon-cls small-icon-button mr-2"
       [disabled]="!iscontenteditable" *ngIf="isTradeMarkRequired" tabindex="-1">
       ™
     </button>
